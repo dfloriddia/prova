@@ -1,16 +1,13 @@
 #!/usr/bin/env groovy
-pipeline
-{
-    agent any
-
+// Declarative //
+pipeline {
+agent { dockerfile true }
 stages {
-
-    stage('prova')
-    {
+stage('Test') {
 steps {
-
-    echo "ciao"
+sh 'node --version'
+sh 'svn --version'
 }
-
-    }
-}}
+}
+}
+}
